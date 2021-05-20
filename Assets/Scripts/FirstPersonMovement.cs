@@ -9,17 +9,21 @@ public class FirstPersonMovement : MonoBehaviour
     public Vector3 direction;
     public float speed;
 
+    public Rigidbody rb; //player
+
     // Start is called before the first frame update
     void Start()
     {
-        
+        rb = gameObject.GetComponent<Rigidbody>();
+
     }
 
-    // Update is called once per frame
-    void Update()
+    // All physics calculation happen in FixedUpdate
+    void FixedUpdate()
     {
-        transform.Translate(direction * speed * Time.deltaTime);
-
+        //transform.Translate(direction * speed * Time.deltaTime);
+        Vector3 localDirection = transform.TransformDirection(direction);
+        rb.MovePosition(rb.position + (localDirection * speed * Time.deltaTime));
     }
 
     public void OnPlayerMove(InputValue value)
@@ -28,5 +32,7 @@ public class FirstPersonMovement : MonoBehaviour
 
         direction.x = inputVector.x;
         direction.z = inputVector.y;
+
+        direction.y = 0f;
     }
 }
