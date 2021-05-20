@@ -11,6 +11,8 @@ public class FirstPersonCamera : MonoBehaviour
     public float deltaX;
     public float deltaY;
 
+    [Header("Mouse Sensitivity 0-1")]
+    public float ms; 
 
     public float xRot;
     public float yRot;
@@ -25,8 +27,8 @@ public class FirstPersonCamera : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
-        yRot += deltaX;
-        xRot -= deltaY;
+        yRot += deltaX * ms;
+        xRot -= deltaY * ms;
 
         xRot = Mathf.Clamp(xRot, -90f, 90f);
 
@@ -36,12 +38,10 @@ public class FirstPersonCamera : MonoBehaviour
 
     }
 
-    public void onCameraLook(InputValue value)
+    public void OnCameraLook(InputValue value)
     {
         Vector2 inputVector = value.Get<Vector2>();
         deltaX = inputVector.x;
         deltaY = inputVector.y;
-
-        Debug.Log("Called");
     }
 }
