@@ -1367,3 +1367,12 @@ Received Import Request.
 Start importing Assets/_Scenes/Main/Lightmap-0_comp_dir.png using Guid(ba6ab837de7614c4a8c86af50dbfee99) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: '26c90e0d1bc8090ee80e80555a4d658d') in 0.015051 seconds
   Import took 0.017083 seconds .
 
+========================================================================
+Received Import Request.
+  Time since last request: 242.673282 seconds.
+  path: Assets/_Scenes/FPExplorer.unity
+  artifactKey: Guid(ea383d7a0f24f3442b496e39b8d3b5af) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
+Start importing Assets/_Scenes/FPExplorer.unity using Guid(ea383d7a0f24f3442b496e39b8d3b5af) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: '6de83cba457f5baea6fcc5d7017a445f') in 0.004649 seconds
+  Import took 0.006671 seconds .
+
+AssetImportWorkerClient::OnTransportError - code=2 error=End of file
